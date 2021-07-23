@@ -1,0 +1,91 @@
+/* 
+UI - COLOR PALET
+https://coolors.co/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+    background-image:url("https://i.pinimg.com/originals/9d/be/c6/9dbec6779279cc336d8f383f8f61e641.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color:rgba(233,236,239, 0.8);
+    font-family: 'MedievalSharp', cursive;
+    font-size: 3vh;
+}
+
+button {
+    color:rgba(233,236,239, 0.8);
+    font-family: 'MedievalSharp', cursive;
+    font-size: 3vh;
+}
+
+input {
+    color:rgba(233,236,239, 0.8);
+    font-family: 'MedievalSharp', cursive;
+    font-size: 2vh; 
+    background-color: rgba(52, 58, 64, 0.8);
+    border-radius: 1vh;
+    outline: none;
+    border: 2px;
+    padding: 0.5vh;
+    margin-left: 0.5vh;
+    width: 15vw;
+    transition: 0.2s;
+}
+
+input:focus {
+    background-color: rgba(73, 80, 87, 0.8);
+    border-radius: 0.5vh;
+}
+
+.horizontalButtonList {
+    position: relative;
+    display: inline-block;
+    background-color: rgba(73,80,87,0.3);
+    border-radius: 1vh;
+}
+
+.horizontalButtonList button{
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    border: transparent;
+    transition: 0.2s;
+}
+
+.horizontalButtonList .left {
+    border-bottom-left-radius : 1vh;
+    border-top-left-radius : 1vh;
+}
+
+.horizontalButtonList .right {
+    border-bottom-right-radius : 1vh;
+    border-top-right-radius : 1vh;
+}
+
+.horizontalButtonList button:hover{
+    background-color: rgba(108,117,125,0.5);
+}
+
+.horizontalButtonList .selected{
+    background-color: rgba(73,80,87,0.5);
+}
+
+#LoginRegister {
+    background-color: rgba(33,37,41, 0.9);
+    text-align: center;
+    width: 40vw;
+    margin: auto;
+    padding: 4vh;
+    border-radius: 5vh;
+}
+
+#LoginRegister div{
+    margin: 0.6vh;
+}
+
+#LoginRegister .horizontalButtonList {
+    margin-bottom: 3vh;
+}

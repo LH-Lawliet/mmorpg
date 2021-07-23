@@ -1,22 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import socketIOClient from "socket.io-client";
+import {LoginRegister} from "./connection/LoginRegister.js";
+let texts = require("./language/textEN.json")
+
 const ENDPOINT = "http://127.0.0.1:4001";
 
-function App() {
-  const [response, setResponse] = useState("");
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      account: null,
+      timestamp: 0,
+      currentLanguage:'EN'
+    };
 
-  useEffect(() => {
     const socket = socketIOClient(ENDPOINT);
     socket.on("FromAPI", data => {
-      setResponse(data);
+      this.setTimeStamp(data)
     });
-  }, []);
+    this.chooseWhatToRender = this.chooseWhatToRender.bind(this)
+    this.getLabel = this.getLabelText.bind(this)
+  }
 
-  return (
-    <p>
-      It's <time dateTime={response}>{response}</time>
-    </p>
-  );
+  getLabelText(code) {
+    return texts[code] || ("NoLabel_"+code)
+  }
+
+  setTimeStamp(ts) {
+    this.setState({timestamp:ts})
+  }
+
+  chooseWhatToRender() {
+    let elements = []
+    if (!this.state.account) {
+      elements.push(<LoginRegister key='LoginRegister' labels={this.getLabelText}/>)
+    }
+    return elements
+  }
+
+  render() {
+    let elements = this.chooseWhatToRender()
+    return (
+      <div>
+        {elements}
+      </div>
+    );
+  }
 }
 
 export default App;
