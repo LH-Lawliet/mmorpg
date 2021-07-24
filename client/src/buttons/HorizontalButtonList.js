@@ -21,7 +21,6 @@ export class HorizontalButtonList extends React.Component {
         for (let k in this.state.listOfButtons) {
             let buttonData = this.state.listOfButtons[k]
             let className = ""
-            console.log(k, (this.state.listOfButtons.length-1).toString())
             if (k === this.state.current) {
                 className += " selected"
             }

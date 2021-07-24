@@ -1,15 +1,21 @@
 import React from "react";
+import {NormalButton} from '../buttons/NormalButton.js'
 
 export class Register extends React.Component {
     constructor(data) {
         super(data)
         this.state = {};
         this.labels = data.labels
+        this.askForRegister = this.askForRegister.bind(this)
+    }
+
+    askForRegister() {
+        console.log("ASK FOR Register")
     }
 
     render() {
         return (
-            <div id='Register'>
+            <div id='Register' className="RightLeft">
                 <div id="identifierDiv">
                     <label htmlFor="name">{this.labels("username")}:</label>
                     <input type="text" className="registerInput" id="RegisterUsername" name={this.labels("username")} required minLength="3"/>
@@ -26,6 +32,8 @@ export class Register extends React.Component {
                     <label htmlFor="password2">{this.labels("passwordConfirmation")}:</label>
                     <input type="password" className="registerInput" id="LoginPassword2" name={this.labels("passwordConfirmation")} required minLength="5"/>
                 </div>
+
+                <NormalButton text={this.labels("register")} callback={this.askForRegister}/>
             </div>
         )
     }

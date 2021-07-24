@@ -31,12 +31,28 @@ input {
     border: 2px;
     padding: 0.5vh;
     margin-left: 0.5vh;
-    width: 15vw;
+    width: 20vw;
     transition: 0.2s;
 }
 
 input:focus {
     background-color: rgba(73, 80, 87, 0.8);
+    border-radius: 0.5vh;
+}
+
+
+.NormalButton {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    border: transparent;
+    background-color: rgba(108,117,125,0.3);
+    transition: 0.2s;
+    border-radius: 1vh;
+}
+
+.NormalButton:hover{
+    background-color: rgba(108,117,125,0.5);
     border-radius: 0.5vh;
 }
 
@@ -89,3 +105,19 @@ input:focus {
 #LoginRegister .horizontalButtonList {
     margin-bottom: 3vh;
 }
+
+.RightLeft {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+.RightLeft button{
+    float: right;
+    margin-top: 2.5vh;
+}
+
+.RightLeft input{
+    float: right;
+}
+

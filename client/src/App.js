@@ -10,7 +10,6 @@ class App extends React.Component {
     super();
     this.state = {
       account: null,
-      timestamp: 0,
       currentLanguage:'EN'
     };
 
@@ -18,6 +17,7 @@ class App extends React.Component {
     socket.on("FromAPI", data => {
       this.setTimeStamp(data)
     });
+    this.timestamp = 0
     this.chooseWhatToRender = this.chooseWhatToRender.bind(this)
     this.getLabel = this.getLabelText.bind(this)
   }
@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   setTimeStamp(ts) {
-    this.setState({timestamp:ts})
+    this.timestamp = ts
   }
 
   chooseWhatToRender() {
